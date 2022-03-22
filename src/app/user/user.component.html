@@ -1,0 +1,119 @@
+<nav class="navbar.navbar-light bg-primary">
+    <div class="container-fluid">
+       <div class="d-flex">
+           <button (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class ="btn btn-success"> Add User</button>
+           <button class ="btn btn-danger"> Delete All</button>
+       </div>
+    </div>
+</nav>
+
+<table class = "table mt-3">
+    <thead>
+        <tr>
+            <th scope ="col"> ID </th>
+            <th scope ="col"> Name </th>
+            <th scope ="col"> Surname </th>
+            <th scope ="col"> Birthday </th>
+            <th scope ="col"> Gender </th>
+            <th scope ="col"> Phone Number </th>
+            <th scope ="col"> Action </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of userData">
+           <td>{{row.id}}</td>
+           <td>{{row.name}}</td>
+           <td>{{row.surname}}</td>
+           <td>{{row.birthday}}</td>
+           <td>{{row.gender}}</td>
+           <td><a href="tel: row.phoneNumber">Call us at {{row.phoneNumber}}</a></td>
+            <td>
+                <button (click)="onEdit(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class ="btn btn-info">Edit</button>
+                <button (click)="deleteUser(row)" type="button" data-bs-toggle="modal" data-bs-target="id01" class ="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">User Detail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "formValue" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" formControlName = "name" class="form-control" id="name" required>
+                  <div class="invalid-feedback" *ngIf="formValue.errors?.['name']">
+                    Please provide a valid name.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="surname" class="form-label">Surname</label>
+                  <input type="text" formControlName = "surname" class="form-control" id="surname" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid surname.
+                  </div>
+                </div>
+                <div class="mb-3">
+                    <label for="birthday" class="form-label">Birthday</label>
+                    <input type="date" formControlName = "birthday" class="form-control" id="birthday" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid birthday.
+                      </div>
+                  </div>
+                <div class="mb-3">                  
+                  <label for="gender" class="form-label">Gender</label>
+                    <input class="form-control" formControlName = "gender"  list="datalistOptions" id="gender" required>
+                    <datalist id="datalistOptions">
+                    <option value="Female">
+                    <option value="Male">
+                    </datalist>
+                    <div class="invalid-feedback">
+                        Please provide a gender.
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <span class="input-group-text" id="inputGroupPrepend">+</span>
+                    <input type="text" formControlName = "phoneNumber" class="form-control" id="phoneNumber" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid phone number.
+                      </div>
+                  </div> 
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="number" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                      Please choose a username.
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="button" (click)="updateUserDetails()" class="btn btn-primary">Update</button>
+                  </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div id="id01" class="modal">
+    <form class="modal-content" action="/action_page.php">
+      <div class="modal-body">
+        <h1>Delete Account</h1>
+        <p>Are you sure you want to delete your account?</p>
+  
+        <div class="clearfix">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <button type="button" class="deletebtn">Delete</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

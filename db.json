@@ -1,0 +1,72 @@
+{
+  "posts": [
+    {
+      "id": 12,
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": null,
+      "gender": "Šalaševičiūtė",
+      "phoneNumber": "Šalaševičiūtė"
+    },
+    {
+      "id": 17,
+      "name": null,
+      "surname": null,
+      "birthday": null,
+      "gender": "Male",
+      "phoneNumber": null
+    },
+    {
+      "id": 18,
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": null,
+      "gender": "Šalaševičiūtė",
+      "phoneNumber": "Šalaševičiūtė"
+    },
+    {
+      "id": 19,
+      "name": "Monika",
+      "surname": "Šalaševičiūtė",
+      "birthday": "2022-03-24",
+      "gender": "Female",
+      "phoneNumber": "37055555555"
+    },
+    {
+      "id": 20,
+      "name": null,
+      "surname": null,
+      "birthday": null,
+      "gender": null,
+      "phoneNumber": null
+    },
+    {
+      "id": 21,
+      "name": null,
+      "surname": "sala",
+      "birthday": null,
+      "gender": null,
+      "phoneNumber": null
+    },
+    {
+      "id": 22,
+      "name": null,
+      "surname": null,
+      "birthday": null,
+      "gender": null,
+      "phoneNumber": null
+    },
+    {
+      "id": 23,
+      "name": null,
+      "surname": null,
+      "birthday": null,
+      "gender": null,
+      "phoneNumber": null
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
