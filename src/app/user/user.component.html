@@ -79,23 +79,16 @@
                 </div>
                 <div class="mb-3">
                     <label for="phoneNumber" class="form-label">Phone Number</label>
-                    <span class="input-group-text" id="inputGroupPrepend">+</span>
-                    <input type="text" formControlName = "phoneNumber" class="form-control" id="phoneNumber" required>
-                    <div class="invalid-feedback">
+                    <input type="number" formControlName = "phoneNumber" class="form-control" id="phoneNumber" required>
+                    <div  required minlength="9" class="invalid-feedback">
                         Please provide a valid phone number.
                       </div>
                   </div> 
-                  <div class="input-group has-validation">
-                    <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="number" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                    <div class="invalid-feedback">
-                      Please choose a username.
-                    </div>
-                  </div>
+
                   <div class="modal-footer">
                     <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Add</button>
-                    <button type="button" (click)="updateUserDetails()" class="btn btn-primary">Update</button>
+                    <!-- <button type="button" (click)="updateUserDetails()" class="btn btn-primary">Update</button> -->
                   </div>
               </form>
         </div>

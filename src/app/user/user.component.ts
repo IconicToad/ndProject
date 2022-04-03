@@ -70,12 +70,19 @@ export class UserComponent implements OnInit {
   }
 
   deleteUser(row : any){
-    // this.api.deleteUser(row.id)
-    // .subscribe(res=>{
-    //   alert("User Deleted");
-    //   this.getAllUsers();
-    // })
+    this.api.deleteUser(row.id)
+    .subscribe(res=>{
+      alert("User Deleted");
+      this.getAllUsers();
+    })
   }
+
+  // deleteAllUser(){
+  //   this.api.deleteUser()
+  //   .subscribe(res=>){
+  //     this.userData = res;
+  //   }
+  // }
 
   onEdit(row:any){
     this.showAdd = false;
