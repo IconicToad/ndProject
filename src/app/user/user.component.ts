@@ -62,6 +62,27 @@ export class UserComponent implements OnInit {
     }
   }
 
+  postUserDetails(){
+    this.userModuleObj.name = this.formValue.value.name;
+    this.userModuleObj.surname = this.formValue.value.surname;
+    this.userModuleObj.birthday = this.formValue.value.birthday;
+    this.userModuleObj.gender = this.formValue.value.gender;
+    this.userModuleObj.phoneNumber = this.formValue.value.phoneNumber;
+
+    this.api.postUser(this.userModuleObj)
+    .subscribe(res =>{
+      console.log(res);
+      alert("User Added Successfully")
+      let ref = document.getElementById('cancel')
+      ref?.click();
+      this.formValue.reset();
+    },
+    err=>{
+      alert("Something went wrong");
+    })
+  }
+
+
   getAllUsers(){
     this.api.getUser()
     .subscribe(res=>{
@@ -87,6 +108,7 @@ export class UserComponent implements OnInit {
   onEdit(row:any){
     this.showAdd = false;
     this.showUpdate = true;
+    this.userModuleObj.id = row.id;
     this.formValue.controls['name'].setValue(row.name)
     this.formValue.controls['surname'].setValue(row.surname)
     this.formValue.controls['birthday'].setValue(row.birthday)
@@ -95,7 +117,7 @@ export class UserComponent implements OnInit {
   }
 
   updateUserDetails(){
-    this.userModuleObj.id = this.formValue.value.id;
+    // this.userModuleObj.id = this.formValue.value.id;
     this.userModuleObj.name = this.formValue.value.name;
     this.userModuleObj.surname = this.formValue.value.surname;
     this.userModuleObj.birthday = this.formValue.value.birthday;
@@ -104,7 +126,7 @@ export class UserComponent implements OnInit {
 
     this.api.updateUser(this.userModuleObj,this.userModuleObj.id)
     .subscribe(res=>{
-      console.log(res);
+      // console.log(res);
       alert("Updated Succesfully");
       let ref = document.getElementById('cancel') // form closes automaticaly thanks to this
       ref?.click();

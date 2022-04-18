@@ -1,20 +1,36 @@
 {
   "posts": [
     {
-      "id": 1,
-      "name": "Monika ",
-      "surname": "123",
-      "birthday": "2022-03-30",
-      "gender": "Male",
-      "phoneNumber": 123456789
-    },
-    {
       "id": 2,
       "name": "Monika Salaseviciute",
       "surname": "Šalaševičiūtė",
-      "birthday": "2022-04-08",
+      "birthday": "2022-04-04",
       "gender": "Male",
       "phoneNumber": 4
+    },
+    {
+      "id": 5,
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": "2022-04-06",
+      "gender": "Male",
+      "phoneNumber": 4
+    },
+    {
+      "id": 6,
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": "2022-04-05",
+      "gender": "Male",
+      "phoneNumber": 123456
+    },
+    {
+      "id": 7,
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": "2022-04-01",
+      "gender": "Male",
+      "phoneNumber": 123456
     }
   ],
   "comments": [],
