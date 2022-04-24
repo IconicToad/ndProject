@@ -22,6 +22,12 @@ export class ApiService {
       return res;
     }))
   }
+  getAllUsers(){
+    return this.http.get("http://localhost:3000/posts/")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
   updateUser(data : any,id: number){
     return this.http.put<any>("http://localhost:3000/posts/"+id,data)
     .pipe(map((res:any)=>{

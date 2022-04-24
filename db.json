@@ -1,36 +1,68 @@
 {
   "posts": [
     {
-      "id": 2,
       "name": "Monika Salaseviciute",
       "surname": "Šalaševičiūtė",
-      "birthday": "2022-04-04",
+      "birthday": "2022-04-08",
       "gender": "Male",
-      "phoneNumber": 4
+      "phoneNumber": 8,
+      "id": 12
     },
     {
-      "id": 5,
       "name": "Monika Salaseviciute",
       "surname": "Šalaševičiūtė",
       "birthday": "2022-04-06",
       "gender": "Male",
-      "phoneNumber": 4
+      "phoneNumber": 8,
+      "id": 13
     },
     {
-      "id": 6,
       "name": "Monika Salaseviciute",
       "surname": "Šalaševičiūtė",
-      "birthday": "2022-04-05",
+      "birthday": "2022-04-08",
       "gender": "Male",
-      "phoneNumber": 123456
+      "phoneNumber": 8,
+      "id": 14
     },
     {
-      "id": 7,
       "name": "Monika Salaseviciute",
       "surname": "Šalaševičiūtė",
-      "birthday": "2022-04-01",
+      "birthday": "2022-04-06",
       "gender": "Male",
-      "phoneNumber": 123456
+      "phoneNumber": 8,
+      "id": 15
+    },
+    {
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": "2022-04-08",
+      "gender": "Male",
+      "phoneNumber": 8,
+      "id": 16
+    },
+    {
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": "2022-04-06",
+      "gender": "Male",
+      "phoneNumber": 8,
+      "id": 17
+    },
+    {
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": "2022-04-06",
+      "gender": "Male",
+      "phoneNumber": 8,
+      "id": 18
+    },
+    {
+      "name": "Monika Salaseviciute",
+      "surname": "Šalaševičiūtė",
+      "birthday": "2022-04-06",
+      "gender": "Male",
+      "phoneNumber": 8,
+      "id": 19
     }
   ],
   "comments": [],

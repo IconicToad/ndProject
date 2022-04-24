@@ -39,11 +39,7 @@ export class UserComponent implements OnInit {
 
   onSubmit(){
     if (this.formValue.valid) {
-      this.userModuleObj.name = this.formValue.value.name;
-      this.userModuleObj.surname = this.formValue.value.surname;
-      this.userModuleObj.birthday = this.formValue.value.birthday;
-      this.userModuleObj.gender = this.formValue.value.gender;
-      this.userModuleObj.phoneNumber = this.formValue.value.phoneNumber;
+      this.userModuleObj = {...this.formValue.value}
 
       this.api.postUser(this.userModuleObj)
       .subscribe(res =>{
@@ -62,29 +58,8 @@ export class UserComponent implements OnInit {
     }
   }
 
-  postUserDetails(){
-    this.userModuleObj.name = this.formValue.value.name;
-    this.userModuleObj.surname = this.formValue.value.surname;
-    this.userModuleObj.birthday = this.formValue.value.birthday;
-    this.userModuleObj.gender = this.formValue.value.gender;
-    this.userModuleObj.phoneNumber = this.formValue.value.phoneNumber;
-
-    this.api.postUser(this.userModuleObj)
-    .subscribe(res =>{
-      console.log(res);
-      alert("User Added Successfully")
-      let ref = document.getElementById('cancel')
-      ref?.click();
-      this.formValue.reset();
-    },
-    err=>{
-      alert("Something went wrong");
-    })
-  }
-
-
   getAllUsers(){
-    this.api.getUser()
+    this.api.getAllUsers()
     .subscribe(res=>{
       this.userData = res;
     })
@@ -98,12 +73,9 @@ export class UserComponent implements OnInit {
     })
   }
 
-  // deleteAllUser(){
-  //   this.api.deleteUser()
-  //   .subscribe(res=>){
-  //     this.userData = res;
-  //   }
-  // }
+  deleteAllUser(){
+    this.api.deleteUser(this.getAllUsers)
+  }
 
   onEdit(row:any){
     this.showAdd = false;
@@ -116,18 +88,11 @@ export class UserComponent implements OnInit {
     this.formValue.controls['phoneNumber'].setValue(row.phoneNumber)
   }
 
-  updateUserDetails(){
-    // this.userModuleObj.id = this.formValue.value.id;
-    this.userModuleObj.name = this.formValue.value.name;
-    this.userModuleObj.surname = this.formValue.value.surname;
-    this.userModuleObj.birthday = this.formValue.value.birthday;
-    this.userModuleObj.gender = this.formValue.value.gender;
-    this.userModuleObj.phoneNumber = this.formValue.value.phoneNumber;
-
+  manageUser(){
+    this.userModuleObj = {...this.formValue.value}
     this.api.updateUser(this.userModuleObj,this.userModuleObj.id)
     .subscribe(res=>{
-      // console.log(res);
-      alert("Updated Succesfully");
+      // alert("Updated Succesfully");
       let ref = document.getElementById('cancel') // form closes automaticaly thanks to this
       ref?.click();
       this.formValue.reset();
